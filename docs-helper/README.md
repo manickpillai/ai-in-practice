@@ -19,18 +19,13 @@ This project builds both from the same markdown files, so they never drift apart
 
 ## 1. Business problem
 
-Documentation has to serve two kinds of readers:
+Docs have two kinds of readers: people who browse and read in full, and people with a specific question who want the answer now. A docs site serves the first group well and the second poorly. Missing or outdated docs also go unnoticed.
 
-- **Readers** who like to browse and read the docs in full, following links and getting the whole picture.
-- **Quick-answer users** who have a specific question and want the answer now, without hunting through pages.
+`docs-helper` serves both from one set of markdown files:
 
-A docs site alone serves the first group well and the second poorly. Docs that are missing or out of date also go unnoticed.
-
-`docs-helper` serves both from one source of truth. The MkDocs site is for readers. For quick answers, a Claude skill takes a plain-language question and returns a short answer with links to the exact sections, so those users can read further if they want. If the docs don't cover the question, it says so and points to where the docs should be updated. That turns unanswered questions into a visible list of documentation gaps instead of confident answers from general knowledge.
-
-### A growing knowledge base
-
-A maintainer only has to keep the markdown docs up to date. Each change flows into the website and the `llms.txt` index automatically, so nothing else needs maintaining. As new users join and ask the same questions, the skill answers them straight from the latest docs, so the maintainer doesn't have to repeat the same answers. When a question isn't covered, the maintainer adds a section and the next person gets the answer.
+- **Readers** get the MkDocs site.
+- **Quick-answer users** ask the skill in plain language and get a short answer with links to the exact sections.
+- **Maintainers** get a list of documentation gaps. If the docs don't cover a question, the skill says so instead of answering from general knowledge. Add the missing section and the next person gets the answer.
 
 ## 2. The data
 
@@ -65,9 +60,23 @@ Each line in `llms.txt` links to a heading, with h3 entries indented under their
 
 ## 3. Results
 
-The skill lives at [`.claude/skills/docs-helper/SKILL.md`](.claude/skills/docs-helper/SKILL.md). Run Claude Code from this folder and invoke it:
+The skill is a single `SKILL.md` file. Each tool looks for it in its own folder:
 
+| Tool | Skill location |
+|---|---|
+| Claude Code | [`.claude/skills/docs-helper/SKILL.md`](.claude/skills/docs-helper/SKILL.md) |
+| GitHub Copilot | `.github/skills/docs-helper/SKILL.md` |
+
+Claude Code works out of the box. For Copilot, copy the skill into place:
+
+```bash
+mkdir -p .github/skills
+cp -r .claude/skills/docs-helper .github/skills/docs-helper
 ```
+
+Run your tool from this folder (Claude Code in the terminal, or Copilot Chat in agent mode in VS Code) and invoke it:
+
+```text
 /docs-helper how do I mock a database in tests?
 ```
 
