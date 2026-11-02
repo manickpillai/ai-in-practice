@@ -15,6 +15,14 @@ def test_add():
 
 Replace databases, network calls and clocks with mocks or fakes so tests stay fast and deterministic.
 
+### Mocking a database
+
+Patch the repository or session object, or use an in-memory database, so no real connection is made.
+
+### Mocking time
+
+Inject a clock or freeze time so tests do not depend on the current date.
+
 ## Code coverage
 
 Coverage shows which lines ran during tests. Use it to find gaps, not as a goal on its own.

@@ -10,6 +10,14 @@ Check for differences in environment variables, time zones, dependency versions 
 
 Profile with `pytest --durations=10`, mock slow dependencies and run tests in parallel.
 
+### Finding the slowest tests
+
+Run `pytest --durations=10` to list the ten slowest tests.
+
+### Running tests in parallel
+
+Install `pytest-xdist` and run `pytest -n auto`.
+
 ## Import errors when running tests
 
 Make sure the package is installed in the active environment, for example with `uv sync`.
