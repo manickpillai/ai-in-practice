@@ -1,11 +1,11 @@
-"""Generate docs/llms.txt from the h1/h2 headings of every markdown file in docs/."""
+"""Generate docs/llms.txt from the h1/h2/h3 headings of every markdown file in docs/."""
 import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
 OUTPUT = DOCS / "llms.txt"
-HEADING = re.compile(r"^(#{1,2})\s+(.+?)\s*#*\s*$")
+HEADING = re.compile(r"^(#{1,3})\s+(.+?)\s*#*\s*$")
 
 
 def slugify(heading: str) -> str:
@@ -24,7 +24,7 @@ def headings(path: Path):
 
 
 def main() -> None:
-    lines = ["# Docs Helper Demo", "", "> Index of documentation headings (h1/h2). Paths are relative to the project root.", ""]
+    lines = ["# Docs Helper Demo", "", "> Index of documentation headings (h1/h2/h3). Paths are relative to the project root.", ""]
     for path in sorted(DOCS.rglob("*.md")):
         rel = path.relative_to(ROOT).as_posix()
         found = list(headings(path))
@@ -34,7 +34,8 @@ def main() -> None:
         lines.append(f"## {title} ({rel})")
         for level, text in found:
             anchor = "" if level == 1 else f"#{slugify(text)}"
-            lines.append(f"- [{text}]({rel}{anchor})")
+            indent = "  " if level == 3 else ""  # nest h3 under its h2
+            lines.append(f"{indent}- [{text}]({rel}{anchor})")
         lines.append("")
     content = "\n".join(lines)
     # Only write on change so MkDocs' file watcher doesn't trigger a rebuild loop.

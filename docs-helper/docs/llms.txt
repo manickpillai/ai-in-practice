@@ -1,6 +1,6 @@
 # Docs Helper Demo
 
-> Index of documentation headings (h1/h2). Paths are relative to the project root.
+> Index of documentation headings (h1/h2/h3). Paths are relative to the project root.
 
 ## General FAQ (docs/faq/general.md)
 - [General FAQ](docs/faq/general.md)
@@ -13,6 +13,8 @@
 - [Troubleshooting](docs/faq/troubleshooting.md)
 - [Tests pass locally but fail in CI](docs/faq/troubleshooting.md#tests-pass-locally-but-fail-in-ci)
 - [Tests are slow](docs/faq/troubleshooting.md#tests-are-slow)
+  - [Finding the slowest tests](docs/faq/troubleshooting.md#finding-the-slowest-tests)
+  - [Running tests in parallel](docs/faq/troubleshooting.md#running-tests-in-parallel)
 - [Import errors when running tests](docs/faq/troubleshooting.md#import-errors-when-running-tests)
 - [mkdocs serve fails to start](docs/faq/troubleshooting.md#mkdocs-serve-fails-to-start)
 
@@ -46,5 +48,7 @@
 - [Unit Testing](docs/testing/unit-testing.md)
 - [Writing a good unit test](docs/testing/unit-testing.md#writing-a-good-unit-test)
 - [Mocking dependencies](docs/testing/unit-testing.md#mocking-dependencies)
+  - [Mocking a database](docs/testing/unit-testing.md#mocking-a-database)
+  - [Mocking time](docs/testing/unit-testing.md#mocking-time)
 - [Code coverage](docs/testing/unit-testing.md#code-coverage)
 - [Common unit testing mistakes](docs/testing/unit-testing.md#common-unit-testing-mistakes)
