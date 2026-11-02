@@ -1,0 +1,50 @@
+# Docs Helper Demo
+
+> Index of documentation headings (h1/h2). Paths are relative to the project root.
+
+## General FAQ (docs/faq/general.md)
+- [General FAQ](docs/faq/general.md)
+- [How do I contribute to the docs?](docs/faq/general.md#how-do-i-contribute-to-the-docs)
+- [Where do I report a documentation error?](docs/faq/general.md#where-do-i-report-a-documentation-error)
+- [Which Python version is required?](docs/faq/general.md#which-python-version-is-required)
+- [How do I preview the docs locally?](docs/faq/general.md#how-do-i-preview-the-docs-locally)
+
+## Troubleshooting (docs/faq/troubleshooting.md)
+- [Troubleshooting](docs/faq/troubleshooting.md)
+- [Tests pass locally but fail in CI](docs/faq/troubleshooting.md#tests-pass-locally-but-fail-in-ci)
+- [Tests are slow](docs/faq/troubleshooting.md#tests-are-slow)
+- [Import errors when running tests](docs/faq/troubleshooting.md#import-errors-when-running-tests)
+- [mkdocs serve fails to start](docs/faq/troubleshooting.md#mkdocs-serve-fails-to-start)
+
+## Docs Helper Demo (docs/index.md)
+- [Docs Helper Demo](docs/index.md)
+- [What is covered](docs/index.md#what-is-covered)
+- [How to use this site](docs/index.md#how-to-use-this-site)
+
+## Integration Testing (docs/testing/integration-testing.md)
+- [Integration Testing](docs/testing/integration-testing.md)
+- [When to use integration tests](docs/testing/integration-testing.md#when-to-use-integration-tests)
+- [Setting up test environments](docs/testing/integration-testing.md#setting-up-test-environments)
+- [Testing APIs](docs/testing/integration-testing.md#testing-apis)
+- [Flaky integration tests](docs/testing/integration-testing.md#flaky-integration-tests)
+
+## Testing Overview (docs/testing/overview.md)
+- [Testing Overview](docs/testing/overview.md)
+- [Why we test](docs/testing/overview.md#why-we-test)
+- [The test pyramid](docs/testing/overview.md#the-test-pyramid)
+- [Test naming conventions](docs/testing/overview.md#test-naming-conventions)
+- [Running the test suite](docs/testing/overview.md#running-the-test-suite)
+
+## Test Data (docs/testing/test-data.md)
+- [Test Data](docs/testing/test-data.md)
+- [Fixtures](docs/testing/test-data.md#fixtures)
+- [Factories and builders](docs/testing/test-data.md#factories-and-builders)
+- [Handling sensitive data](docs/testing/test-data.md#handling-sensitive-data)
+- [Cleaning up after tests](docs/testing/test-data.md#cleaning-up-after-tests)
+
+## Unit Testing (docs/testing/unit-testing.md)
+- [Unit Testing](docs/testing/unit-testing.md)
+- [Writing a good unit test](docs/testing/unit-testing.md#writing-a-good-unit-test)
+- [Mocking dependencies](docs/testing/unit-testing.md#mocking-dependencies)
+- [Code coverage](docs/testing/unit-testing.md#code-coverage)
+- [Common unit testing mistakes](docs/testing/unit-testing.md#common-unit-testing-mistakes)

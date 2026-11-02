@@ -1,0 +1,14 @@
+site_name: Docs Helper Demo
+docs_dir: docs
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Testing:
+      - Overview: testing/overview.md
+      - Unit Testing: testing/unit-testing.md
+      - Integration Testing: testing/integration-testing.md
+      - Test Data: testing/test-data.md
+  - FAQ:
+      - General: faq/general.md
+      - Troubleshooting: faq/troubleshooting.md
