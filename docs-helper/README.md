@@ -15,6 +15,8 @@ A MkDocs site, an auto-generated `llms.txt` index, and a AI skill that answers q
 
 This project builds both from the same markdown files, so they never drift apart.
 
+![The MkDocs site rendered with the Material theme](images/docs_helper_mkdocs_site.png)
+
 ## 1. Business problem
 
 Documentation has to serve two kinds of readers:
@@ -77,7 +79,13 @@ It refreshes the index, picks the best-matching headings, reads only those secti
 | `my tests are slow` | Answers from "Tests are slow", links `docs/faq/troubleshooting.md#tests-are-slow` |
 | `how do I deploy to Kubernetes?` | Says the docs don't cover it, suggests adding a page under `docs/`, does not answer from general knowledge |
 
-<!-- TODO: replace the table above with real outputs/screenshots from testing -->
+**Question the docs cover.** The skill reads `llms.txt`, pulls only the matching section, answers from it and links the sources. It also notes that the docs are thin on detail:
+
+<img src="images/docs_helper_skill_demo_covered.png" alt="docs-helper answering a covered question about mocking a database" width="500">
+
+**Question the docs don't cover.** The skill declines to answer from general knowledge, suggests where to add the missing page and lists related headings that don't answer it:
+
+<img src="images/docs_helper_skill_demo_not_covered.png" alt="docs-helper declining a question about Kubernetes that the docs don't cover" width="500">
 
 ## 4. Limitations
 
