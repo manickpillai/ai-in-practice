@@ -36,7 +36,12 @@ def main() -> None:
             anchor = "" if level == 1 else f"#{slugify(text)}"
             lines.append(f"- [{text}]({rel}{anchor})")
         lines.append("")
-    OUTPUT.write_text("\n".join(lines), encoding="utf-8")
+    content = "\n".join(lines)
+    # Only write on change so MkDocs' file watcher doesn't trigger a rebuild loop.
+    if OUTPUT.exists() and OUTPUT.read_text(encoding="utf-8") == content:
+        print(f"{OUTPUT.relative_to(ROOT)} is up to date")
+        return
+    OUTPUT.write_text(content, encoding="utf-8")
     print(f"Wrote {OUTPUT.relative_to(ROOT)}")
 
 

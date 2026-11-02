@@ -12,3 +12,5 @@ nav:
   - FAQ:
       - General: faq/general.md
       - Troubleshooting: faq/troubleshooting.md
+hooks:
+  - scripts/mkdocs_hook.py
